@@ -1,0 +1,251 @@
+body {
+    background-color: #eeeeee;
+    font-family: Arial;
+}
+
+.errorMessage {
+    background-color: #f8d7da;
+    border: 2px solid #f5c6cb;
+    border-radius: 7px;
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    vertical-align: middle;
+    height: auto;
+    color: #9b1c24;
+    padding: 10px;
+}
+
+.title {
+    text-align: center;
+    color: #3f3f3f;
+}
+
+#noteTextArea {
+    padding: 10px;
+    border-radius: 7px;
+    font-size: 12pt;
+    width: 100%;
+    color: #2f2f2f;
+}
+
+#noteTextArea.add {
+    border: 1px solid #80cfa9;
+}
+
+#noteTextArea.edit {
+    border: 1px solid #e49e58;
+}
+
+#noteTextArea.add:focus {
+    outline: none;
+    border: 2px solid #80cfa9;
+}
+
+#noteTextArea.edit:focus {
+    outline: none;
+    border: 2px solid #e67300;
+}
+
+#submitNoteBtn {
+    padding: 12px;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 7px;
+    cursor: pointer;
+    transition-duration: 0.2s;
+    margin-left: 1%;
+}
+
+#submitNoteBtn.add {
+    background-color: #4ab883;
+    border: 1px solid #4ab883;
+}
+
+#submitNoteBtn.edit {
+    background-color: #e67300;
+    border: 1px solid #e67300;
+}
+
+#submitNoteBtn.add:active {
+    background-color: #80cfa9;
+    border: 1px solid #80cfa9;
+}
+
+#submitNoteBtn.edit:active {
+    background-color: #f19f4c;
+    border: 1px solid #f19f4c;
+}
+
+#inputFormContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+}
+
+#notesContainer {
+    margin-top: 2%;
+    width: 100%;
+}
+
+.note {
+    height: 19.5pt;
+    padding: 20px;
+    width: 65%;
+    margin: auto;
+    margin-top: 1%;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0px 1px 5px 1px #d6d6d6;
+}
+
+.noteText {
+    line-height: 19.5pt;
+    vertical-align: middle;
+    font-size: 1.1em;
+    margin-left: 1%;
+}
+
+.note.active .noteText {
+    text-decoration: none;
+    color: #4f4f4f;
+}
+
+.note.done .noteText {
+    text-decoration: line-through;
+    color: #818181;
+}
+
+.note.modified .noteText {
+    font-style: italic;
+    text-decoration: none;
+}
+
+.note.modified .noteBtn.doneBtn,
+.note.modified .noteBtn.noteBtn.deleteBtn {
+    visibility: hidden;
+    transition-duration: 0.05s;
+
+}
+
+.noteBtns {
+    float: right;
+}
+
+.noteBtn {
+    line-height: 19.5pt;
+    vertical-align: middle;
+    background-color: transparent;
+    border: 0;
+    transition-duration: 0.15s;
+    padding: 3px 7px;
+}
+
+.noteBtn .fa {
+    line-height: 19.5pt;
+    vertical-align: middle;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.noteBtn.doneBtn {
+    color: #33cc82;
+}
+
+.noteBtn.changeBtn {
+    color: #e67300;
+}
+
+.noteBtn.deleteBtn {
+    color: #cf3030;
+}
+
+.noteBtn.doneBtn:active {
+    color: #207e50;
+}
+
+.noteBtn.changeBtn:active {
+    color: #a85400;
+}
+
+.noteBtn.deleteBtn:active {
+    color: #8b2121;
+}
+
+@media screen and (min-width: 1000px) {
+    #submitNoteBtn.add:hover {
+        background-color: #80cfa9;
+        border: 1px solid #80cfa9;
+    }
+    
+    #submitNoteBtn.edit:hover {
+        background-color: #f19f4c;
+        border: 1px solid #f19f4c;
+    }
+    
+    .noteBtn.doneBtn:hover {
+        color: #207e50;
+    }
+    
+    .noteBtn.changeBtn:hover {
+        color: #a85400;
+    }
+    
+    .noteBtn.deleteBtn:hover {
+        color: #8b2121;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    form {
+        width: 80%;
+    }
+
+    .note {
+        margin-top: 2%;
+        width: 70%;
+        padding: 15px;
+        font-size: 0.8em;
+        border-radius: 10px;
+    }
+
+    .noteBtn .fa {
+        font-size: 1.3em;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    form {
+        width: 95%;
+    }
+
+    .note {
+        margin-top: 2%;
+        width: 85%;
+        padding: 10px;
+        font-size: 0.7em;
+        border-radius: 8px;
+    }
+
+    .noteBtn .fa {
+        font-size: 1.1em;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .note {
+        margin-top: 3%;
+        font-size: 0.6em;
+        border-radius: 8px;
+    }
+
+    .noteBtn .fa {
+        font-size: 1em;
+    }
+}
